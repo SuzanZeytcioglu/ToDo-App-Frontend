@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'TAN Mon Cheri', 'Garbata', 'Quicksand', Verdana, Tahoma, sans-serif;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f8ecec;
+}
+
+section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f8ecec, #db3534, #f8ecec);
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+section span {
+  position: relative;
+  display: block;
+  width: calc(6.25vw - 2px);
+  height: calc(6.25vw - 2px);
+  background: #f8ecec;
+  z-index: 2;
+  transition: 1.5s;
+}
+
+section span:hover {
+  background: #db3534;
+  transition: 0s;
+}
+
+section .signin {
+  position: absolute;
+  width: 500px;
+  background: #f8ecec;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 9);
+  height: 500px;
+}
+
+section .signin .content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+section .signin .content h2 {
+  font-size: 2em;
+  color: #db3534;
+  text-transform: uppercase;
+}
+
+section .signin .content .form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+section .signin .content .form .inputBox {
+  position: relative;
+  width: 100%;
+}
+
+section .signin .content .form .inputBox input {
+  position: relative;
+  width: 100%;
+  background: #f8ecec;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: #db3534;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+section .signin .content .form .inputBox i {
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: #db3534;
+  transition: 0.5s;
+  pointer-events: none;
+  font-weight: 800;
+}
+
+.signin .content .form .inputBox input:focus~i,
+.signin .content .form .inputBox input:valid~i {
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+  color: #db3534;
+}
+
+.signin .content .form .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.signin .content .form .links a {
+  color: #db3534;
+  text-decoration: none;
+}
+
+.signin .content .form .links a:nth-child(2) {
+  color: #db3534;
+  font-weight: 600;
+}
+
+.signin .content .form .inputBox input[type="submit"] {
+  padding: 10px;
+  background: #db3534;
+  color: white;
+  font-weight: 600;
+  font-size: 1.35em;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+input[type="submit"]:active {
+  opacity: 0.6;
+}
+
+@media (max-width: 900px) {
+  section span {
+    width: calc(10vw - 2px);
+    height: calc(10vw - 2px);
+  }
+
+  section .signin {
+    width: auto;
+    height: auto;
+  }
+
+  .body .checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 100px;
+    top: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  section span {
+    width: calc(20vw - 2px);
+    height: calc(20vw - 2px);
+  }
+
+  .body .checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 150px;
+    top: 10px;
+  }
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+
+}
+
+.body .checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  left: 175px;
+  top: auto;
+}
+
+.fa-moon {
+  color: #f1c40f;
+  right: 15px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  right: 2px;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+body.dark .signin {
+  background: #444444;
+}
+
+body.dark section .signin .content .form .inputBox input{
+  background: #444444;
+}
+
+body.dark .signin .content .form .inputBox input[type="submit"] {
+  background: #db3534;
+}
+
+body.dark section span{
+  background: #444444;
+}
+
+body.dark section span:hover {
+  background: #db3534;
+  transition: 0s;
+}
+
+p {
+  font-size: 1em;
+  color: #db3534;
+  margin-top: 20px;
+  text-align: center;
+}
+
+p span {
+  display: inline-block; 
+  color: #db3534;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 auto; 
+}
+
+p span:hover {
+  text-decoration: underline;
+}
